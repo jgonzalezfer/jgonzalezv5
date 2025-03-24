@@ -1,7 +1,11 @@
 import Layout from "../components/Layout";
+import { useNavigate } from "react-router-dom";
+
 import { FiSearch } from "react-icons/fi";
 
 const HomePage = () => {
+  const navigate = useNavigate();
+
   return (
     <Layout>
       <div className="flex flex-col items-center justify-center py-12 md:py-28">
@@ -52,7 +56,9 @@ const HomePage = () => {
             </div>
           </div>
           <div className="mt-6 flex justify-center space-x-3">
-            <button className="rounded-md bg-gray-100 px-5 py-2 text-sm text-gray-800 transition-colors hover:bg-gray-200 dark:bg-gray-700 dark:text-gray-200 dark:hover:bg-gray-600">
+            <button 
+              onClick={() => navigate("/sobremiCvJoelPage")}
+              className="rounded-md bg-gray-100 px-5 py-2 text-sm text-gray-800 transition-colors hover:bg-gray-200 dark:bg-gray-700 dark:text-gray-200 dark:hover:bg-gray-600">
               Buscar con Google
             </button>
             <button className="rounded-md bg-gray-100 px-5 py-2 text-sm text-gray-800 transition-colors hover:bg-gray-200 dark:bg-gray-700 dark:text-gray-200 dark:hover:bg-gray-600">

@@ -65,17 +65,17 @@ const Footer = () => {
       <div className="flex flex-col items-center justify-center mb-8">
         <div className="text-4xl mb-4">
           <span className="text-[#4285f4]">J</span>
-          <span className="text-[#ea4335]">a</span>
-          <span className="text-[#fbbc05]">a</span>
-          <span className="text-[#fbbc05]">a</span>
-          <span className="text-[#fbbc05]">a</span>
-          <span className="text-[#fbbc05]">a</span>
-          <span className="text-[#fbbc05]">a</span>
-          <span className="text-[#fbbc05]">a</span>
-          <span className="text-[#4285f4]">v</span>
-          <span className="text-[#ea4335]">i</span>
+          <span className="text-[#ea4335]">o</span>
+          <span className="text-[#fbbc05]">o</span>
+          <span className="text-[#fbbc05]">o</span>
+          <span className="text-[#fbbc05]">o</span>
+          <span className="text-[#fbbc05]">o</span>
+          <span className="text-[#fbbc05]">o</span>
+          <span className="text-[#fbbc05]">o</span>
+          <span className="text-[#4285f4]">o</span>
+          <span className="text-[#ea4335]">o</span>
           <span className="text-[#34a853]">e</span>
-          <span className="text-[#ea4335]">r</span>
+          <span className="text-[#ea4335]">l</span>
         </div>
         <div className="flex items-center justify-center space-x-4">
           <div className="flex space-x-3 text-[#4285f4]">

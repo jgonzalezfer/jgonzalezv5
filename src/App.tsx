@@ -7,6 +7,7 @@ import EducationPage from "./pages/EducationPage";
 import SkillsPage from "./pages/SkillsPage";
 import ResumePage from "./pages/ResumePage";
 import WhoAmIPage from "./pages/WhoAmIPage";
+import SobremiCvJoelPage from "./pages/SobremiCvJoelPage";
 import { ThemeProvider } from "./context/ThemeContext";
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
           <Route path="/conocimientos" element={<SkillsPage />} />
           <Route path="/curriculum" element={<ResumePage />} />
           <Route path="/quien-soy" element={<WhoAmIPage />} />
+          <Route path="/sobremiCvJoelPage" element={<SobremiCvJoelPage />} />
         </Routes>
       </Router>
     </ThemeProvider>

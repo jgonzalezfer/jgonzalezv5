@@ -22,7 +22,7 @@ const Header = () => {
     ];
 
     const fullItems = [
-      { name: "Todo", path: "/" },
+      { name: "Todo", path: "/sobremiCvJoelPage" },
       { name: "Experiencia", path: "/experiencia" },
       { name: "Educación", path: "/estudios" },
       { name: "Conocimientos", path: "/conocimientos" },
