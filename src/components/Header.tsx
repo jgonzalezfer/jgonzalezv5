@@ -13,35 +13,80 @@ const Header = () => {
     return location.pathname === path;
   };
 
-  const navItems = [
-    { name: "Todo", path: "/" },
-    { name: "Experiencia", path: "/experiencia" },
-    { name: "Educación", path: "/estudios" },
-    { name: "Conocimientos", path: "/conocimientos" },
-    { name: "Proyectos", path: "/proyectos" },
-    { name: "Linkedin", path: "https://linkedin.com", external: true },
-    { name: "Github", path: "https://github.com", external: true },
-  ];
+  const getNavItems = () => {
+    const baseItems = [
+      { name: "Sobre Joel", path: "/" },
+      { name: "Proyectos", path: "/proyectos" },
+      { name: "Linkedin", path: "https://linkedin.com", external: true },
+      { name: "Github", path: "https://github.com", external: true },
+    ];
+
+    const fullItems = [
+      { name: "Todo", path: "/" },
+      { name: "Experiencia", path: "/experiencia" },
+      { name: "Educación", path: "/estudios" },
+      { name: "Conocimientos", path: "/conocimientos" },
+      { name: "Proyectos", path: "/proyectos" },
+      { name: "Linkedin", path: "https://linkedin.com", external: true },
+      { name: "Github", path: "https://github.com", external: true },
+    ];
+
+    return isHomePage ? baseItems : fullItems;
+  };
 
   return (
     <header className="flex flex-col transition-colors dark:bg-gray-900">
-      <div className="flex items-center justify-between p-4">
+      <div className="flex items-center justify-between p-6">
         <div className="flex items-center">
-          <Link to="/" className="text-xl font-medium">
-          <span className="text-blue-500 dark:text-blue-400">J</span>
-            <span className="text-red-500 dark:text-red-400">o</span>
-            <span className="text-yellow-500 dark:text-yellow-300">o</span>
-            <span className="text-blue-500 dark:text-blue-400">e</span>
-            <span className="text-green-500 dark:text-green-400">l</span>
-            <span className="text-red-500 dark:text-red-400">G</span>
-            <span className="text-blue-500 dark:text-blue-400">o</span>
-            <span className="text-red-500 dark:text-red-400">n</span>
-            <span className="text-yellow-500 dark:text-yellow-300">z</span>
-            <span className="text-blue-500 dark:text-blue-400">á</span>
-            <span className="text-red-500 dark:text-red-400">l</span>
-            <span className="text-yellow-500 dark:text-yellow-300">e</span>
-            <span className="text-blue-500 dark:text-blue-400">z</span>
-          </Link>
+          {/* Solo mostrar el nombre si NO estamos en el home */}
+          {!isHomePage && (
+            <Link to="/" className="text-xl font-medium">
+              <span className="text-blue-500 dark:text-blue-400">J</span>
+              <span className="text-red-500 dark:text-red-400">o</span>
+              <span className="text-yellow-500 dark:text-yellow-300">o</span>
+              <span className="text-blue-500 dark:text-blue-400">e</span>
+              <span className="text-green-500 dark:text-green-400">l</span>
+              <span className="text-red-500 dark:text-red-400">G</span>
+              <span className="text-blue-500 dark:text-blue-400">o</span>
+              <span className="text-red-500 dark:text-red-400">n</span>
+              <span className="text-yellow-500 dark:text-yellow-300">z</span>
+              <span className="text-blue-500 dark:text-blue-400">á</span>
+              <span className="text-red-500 dark:text-red-400">l</span>
+              <span className="text-yellow-500 dark:text-yellow-300">e</span>
+              <span className="text-blue-500 dark:text-blue-400">z</span>
+            </Link>
+          )}
+
+          {/* Navegación en línea solo para el home */}
+          {isHomePage && (
+            <nav className="ml-12 flex items-center space-x-8">
+              {getNavItems().map((item) =>
+                item.external ? (
+                  <a
+                    key={item.name}
+                    href={item.path}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-lg font-medium text-gray-600 hover:text-blue-500 dark:text-gray-300 dark:hover:text-blue-400"
+                  >
+                    {item.name}
+                  </a>
+                ) : (
+                  <Link
+                    key={item.name}
+                    to={item.path}
+                    className={`text-lg font-medium ${
+                      isActive(item.path)
+                        ? "text-blue-500 dark:text-blue-400"
+                        : "text-gray-600 hover:text-blue-500 dark:text-gray-300 dark:hover:text-blue-400"
+                    }`}
+                  >
+                    {item.name}
+                  </Link>
+                )
+              )}
+            </nav>
+          )}
 
           {!isHomePage && (
             <div className="ml-6 relative flex w-80 items-center rounded-full border border-gray-300 bg-gray-100 px-4 py-2 dark:border-gray-600 dark:bg-gray-800">
@@ -88,35 +133,38 @@ const Header = () => {
         </div>
       </div>
 
-      <nav className="border-b border-gray-200 dark:border-gray-700">
-        <div className="mx-auto flex max-w-4xl items-center justify-start space-x-4 px-4">
-          {navItems.map((item) =>
-            item.external ? (
-              <a
-                key={item.name}
-                href={item.path}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="border-b-2 border-transparent px-3 py-3 text-sm font-medium text-gray-600 hover:text-blue-500 dark:text-gray-300 dark:hover:text-blue-400"
-              >
-                {item.name}
-              </a>
-            ) : (
-              <Link
-                key={item.name}
-                to={item.path}
-                className={`border-b-2 px-3 py-3 text-sm font-medium ${
-                  isActive(item.path)
-                    ? "border-blue-500 text-blue-500 dark:border-blue-400 dark:text-blue-400"
-                    : "border-transparent text-gray-600 hover:text-blue-500 dark:text-gray-300 dark:hover:text-blue-400"
-                }`}
-              >
-                {item.name}
-              </Link>
-            )
-          )}
-        </div>
-      </nav>
+      {/* Navegación inferior solo para páginas que no son home */}
+      {!isHomePage && (
+        <nav className="border-b border-gray-200 dark:border-gray-700">
+          <div className="mx-auto flex max-w-4xl items-center justify-start space-x-4 px-4">
+            {getNavItems().map((item) =>
+              item.external ? (
+                <a
+                  key={item.name}
+                  href={item.path}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="border-b-2 border-transparent px-3 py-3 text-sm font-medium text-gray-600 hover:text-blue-500 dark:text-gray-300 dark:hover:text-blue-400"
+                >
+                  {item.name}
+                </a>
+              ) : (
+                <Link
+                  key={item.name}
+                  to={item.path}
+                  className={`border-b-2 px-3 py-3 text-sm font-medium ${
+                    isActive(item.path)
+                      ? "border-blue-500 text-blue-500 dark:border-blue-400 dark:text-blue-400"
+                      : "border-transparent text-gray-600 hover:text-blue-500 dark:text-gray-300 dark:hover:text-blue-400"
+                  }`}
+                >
+                  {item.name}
+                </Link>
+              )
+            )}
+          </div>
+        </nav>
+      )}
     </header>
   );
 };
