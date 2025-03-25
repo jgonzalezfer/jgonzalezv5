@@ -1,6 +1,5 @@
 import Layout from "../components/Layout";
 import { useNavigate } from "react-router-dom";
-
 import { FiSearch } from "react-icons/fi";
 
 const HomePage = () => {
@@ -26,35 +25,17 @@ const HomePage = () => {
             <span className="text-blue-500 dark:text-blue-400">z</span>
           </h1>
         </div>
-        <div className="w-full max-w-xl px-5">
-          <div className="relative flex items-center rounded-full border border-gray-300 bg-white px-4 py-3 shadow-sm hover:shadow-md focus-within:shadow-md dark:border-gray-600 dark:bg-gray-800">
-            <FiSearch className="mr-3 h-5 w-5 text-gray-500 dark:text-gray-400" />
+
+        <div className="relative mx-auto w-full max-w-2xl">
+          <div className="flex items-center rounded-full border border-gray-200 bg-white px-5 py-3 shadow-sm dark:border-gray-700 dark:bg-gray-800">
+            <FiSearch className="h-5 w-5 text-gray-400" />
             <input
               type="text"
-              className="flex-grow bg-transparent text-base text-gray-800 outline-none placeholder:text-gray-500 dark:text-gray-200 dark:placeholder:text-gray-400"
-              aria-label="Buscar"
-              placeholder="Buscar información sobre joel"
+              className="ml-3 flex-1 bg-transparent text-gray-700 focus:outline-none dark:text-gray-300"
+              placeholder="Buscar en mi portfolio"
             />
-            <div className="flex space-x-1">
-              <button
-                aria-label="Búsqueda por voz"
-                className="flex h-10 w-10 items-center justify-center rounded-full hover:bg-gray-100 dark:hover:bg-gray-700"
-              >
-                <svg className="h-6 w-6 text-blue-500 dark:text-blue-400" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M12 14c1.66 0 3-1.34 3-3V5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3z"></path>
-                  <path d="M17 11c0 2.76-2.24 5-5 5s-5-2.24-5-5H5c0 3.53 2.61 6.43 6 6.92V21h2v-3.08c3.39-.49 6-3.39 6-6.92h-2z"></path>
-                </svg>
-              </button>
-              <button
-                aria-label="Búsqueda por imagen"
-                className="flex h-10 w-10 items-center justify-center rounded-full hover:bg-gray-100 dark:hover:bg-gray-700"
-              >
-                <svg className="h-5 w-5 text-blue-500 dark:text-blue-400" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M5 10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm14 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm-7 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"></path>
-                </svg>
-              </button>
-            </div>
           </div>
+
           <div className="mt-6 flex justify-center space-x-3">
             <button 
               onClick={() => navigate("/sobremiCvJoelPage")}
