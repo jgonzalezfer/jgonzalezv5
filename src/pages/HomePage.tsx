@@ -11,10 +11,6 @@ const HomePage = () => {
         <div className="mb-6 sm:mb-8 text-center">
           <h1 className="text-4xl sm:text-6xl md:text-8xl font-normal" aria-label="joel">
             <span className="text-blue-500 dark:text-blue-400">J</span>
-            <span className="text-red-500 dark:text-red-400">o</span>
-            <span className="text-yellow-500 dark:text-yellow-300">o</span>
-            <span className="text-blue-500 dark:text-blue-400">e</span>
-            <span className="text-green-500 dark:text-green-400">l</span>
             <span className="text-red-500 dark:text-red-400">G</span>
             <span className="text-blue-500 dark:text-blue-400">o</span>
             <span className="text-red-500 dark:text-red-400">n</span>

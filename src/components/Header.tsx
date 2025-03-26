@@ -82,10 +82,7 @@ const Header = () => {
           {!isHomePage && (
             <Link to="/" className="text-lg md:text-xl font-medium">
               <span className="text-blue-500 dark:text-blue-400">J</span>
-              <span className="text-red-500 dark:text-red-400">o</span>
-              <span className="text-yellow-500 dark:text-yellow-300">o</span>
-              <span className="text-blue-500 dark:text-blue-400">e</span>
-              <span className="text-green-500 dark:text-green-400">l</span>
+
               <span className="text-red-500 dark:text-red-400">G</span>
               <span className="text-blue-500 dark:text-blue-400">o</span>
               <span className="text-red-500 dark:text-red-400">n</span>
