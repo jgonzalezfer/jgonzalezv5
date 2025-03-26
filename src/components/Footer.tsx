@@ -33,8 +33,8 @@ const Footer = () => {
           </div>
         </div>
         <div className="py-3">
-          <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between px-5">
-            <div className="flex items-center space-x-7">
+          <div className="mx-auto flex max-w-6xl flex-col sm:flex-row items-center justify-between px-5">
+            <div className="flex flex-wrap justify-center sm:justify-start items-center space-x-4 sm:space-x-7 mb-4 sm:mb-0">
               <Link to="/quien-soy" className="text-[15px] text-[#70757a] hover:text-[#202124] dark:text-gray-400 dark:hover:text-gray-300">
                 Quién soy
               </Link>
@@ -45,7 +45,7 @@ const Footer = () => {
                 Estudios
               </Link>
             </div>
-            <div className="flex items-center space-x-7">
+            <div className="flex flex-wrap justify-center sm:justify-end items-center space-x-4 sm:space-x-7">
               <Link to="/conocimientos" className="text-[15px] text-[#70757a] hover:text-[#202124] dark:text-gray-400 dark:hover:text-gray-300">
                 Conocimientos
               </Link>
@@ -63,7 +63,7 @@ const Footer = () => {
   return (
     <>
       <div className="flex flex-col items-center justify-center mb-8">
-        <div className="text-4xl mb-4">
+        <div className="text-3xl sm:text-4xl mb-4">
           <span className="text-[#4285f4]">J</span>
           <span className="text-[#ea4335]">o</span>
           <span className="text-[#fbbc05]">o</span>
@@ -77,8 +77,8 @@ const Footer = () => {
           <span className="text-[#34a853]">e</span>
           <span className="text-[#ea4335]">l</span>
         </div>
-        <div className="flex items-center justify-center space-x-4">
-          <div className="flex space-x-3 text-[#4285f4]">
+        <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+          <div className="flex flex-wrap justify-center space-x-3 text-[#4285f4]">
             <Link to="/quien-soy" className={`hover:underline ${location.pathname === '/quien-soy' ? 'font-medium' : ''}`}>1</Link>
             <Link to="/experiencia" className={`hover:underline ${location.pathname === '/experiencia' ? 'font-medium' : ''}`}>2</Link>
             <Link to="/estudios" className={`hover:underline ${location.pathname === '/estudios' ? 'font-medium' : ''}`}>3</Link>
@@ -92,7 +92,7 @@ const Footer = () => {
           </div>
           <Link 
             to={getNextRoute()}
-            className="flex items-center text-[#4285f4] hover:text-[#1a0dab] ml-8"
+            className="flex items-center text-[#4285f4] hover:text-[#1a0dab] sm:ml-8"
           >
             <span>Siguiente</span>
             <svg 
@@ -112,13 +112,15 @@ const Footer = () => {
       </div>
       <footer className="mt-auto bg-[#f2f2f2] dark:bg-gray-900">
         <div className="py-3 border-b border-[#dadce0] dark:border-gray-700">
-          <div className="mx-auto flex max-w-6xl items-center px-5">
-            <span className="text-[15px] text-[#70757a] dark:text-gray-400">Chile</span>
-            <span className="mx-2 text-[15px] text-[#70757a] dark:text-gray-400">|</span>
-            <span className="text-[15px] text-[#70757a] dark:text-gray-400">La ubicación donde estás, Ciudad - </span>
-            <a href="#" className="mx-1 text-[15px] text-[#1a73e8] hover:underline dark:text-blue-400">Según tus sitios (casa)</a>
-            <span className="text-[15px] text-[#70757a] dark:text-gray-400">-</span>
-            <a href="#" className="ml-1 text-[15px] text-[#1a73e8] hover:underline dark:text-blue-400">Actualizar ubicación</a>
+          <div className="mx-auto flex max-w-6xl flex-col sm:flex-row items-center px-3 sm:px-5">
+            <span className="text-[13px] sm:text-[15px] text-[#70757a] dark:text-gray-400">Chile</span>
+            <span className="hidden sm:inline mx-2 text-[15px] text-[#70757a] dark:text-gray-400">|</span>
+            <div className="flex flex-wrap items-center justify-center sm:justify-start mt-1 sm:mt-0">
+              <span className="text-[13px] sm:text-[15px] text-[#70757a] dark:text-gray-400">La ubicación donde estás, Ciudad - </span>
+              <a href="#" className="mx-1 text-[13px] sm:text-[15px] text-[#1a73e8] hover:underline dark:text-blue-400">Según tus sitios (casa)</a>
+              <span className="text-[13px] sm:text-[15px] text-[#70757a] dark:text-gray-400">-</span>
+              <a href="#" className="ml-1 text-[13px] sm:text-[15px] text-[#1a73e8] hover:underline dark:text-blue-400">Actualizar ubicación</a>
+            </div>
           </div>
         </div>
       </footer>
