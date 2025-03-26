@@ -1,14 +1,26 @@
 import Layout from "../components/Layout";
-import { FiChevronRight } from "react-icons/fi";
 import { aboutData } from "../data/aboutData";
 import AboutSection from "../components/AboutSection";
+import NavigationBar from "../components/NavigationBar";
+import noImage from "../assets/img/imagen_no_disponible.jpg";
 
 const ExperiencePage = () => {
-
+  const navigationItems = [
+    { img: noImage, text: "Data" },
+    { img: noImage, text: "Python" },
+    { img: noImage, text: "Websites" },
+    { img: noImage, text: "Librerías" },
+    { img: noImage, text: "Screen scraping" },
+    { img: noImage, text: "Extraer" },
+    { img: noImage, text: "Scraping tool" },
+    { img: noImage, text: "Html" },
+  ];
 
   return (
     <Layout>
       <div className="container mx-auto px-4 py-8">
+        <NavigationBar items={navigationItems} />
+        
         <div className="flex flex-col lg:flex-row gap-6 max-w-8xl mx-auto relative">
           {/* Panel izquierdo con AboutSection - Ahora más ancho */}
           <div className="lg:w-2/7 lg:sticky lg:top-8 lg:self-start">
