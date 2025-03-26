@@ -5,6 +5,13 @@ export interface AboutData {
     description: string;
     image: string;
     section: string;
+    birthDate?: string;
+    birthPlace?: string;
+    titles?: string[];
+    softSkills?: string[];
+    languages?: string[];
+    interests?: string[];
+    favoriteQuote?: string;
   }[];
   skills: {
     languages: string[];
@@ -64,7 +71,14 @@ export const aboutData: AboutData = {
       title: "Desarrollador de Software",
       description: "¡Hola! Soy Joel González, un desarrollador de software apasionado por crear soluciones innovadoras y experiencias digitales excepcionales.",
       image: "/src/assets/img/imagen no disponible.jpg",
-      section: "presentacion"
+      section: "presentacion",
+      birthDate: "02 de abril de 1992 (32 años)",
+      birthPlace: "Rosario, Santa Fe, Argentina",
+      titles: ["Analista de Sistemas", "Analista Programador", "Programador FullStack"],
+      softSkills: ["Comunicación efectiva", "trabajo en equipo", "resolución de problemas", "adaptabilidad y flexibilidad"],
+      languages: ["Español (nativo)", "Inglés (intermedio)"],
+      interests: ["Programación", "tecnología", "series", "películas", "fútbol", "pádel", "viajes"],
+      favoriteQuote: "Hazlo, y si te da miedo, hazlo con miedo."
     },
     {
       name: "Joel González",
