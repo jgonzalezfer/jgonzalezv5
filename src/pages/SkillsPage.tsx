@@ -47,22 +47,22 @@ const SkillsPage = () => {
 
   return (
     <Layout>
-      <div className="mx-auto max-w-4xl p-6">
-        <h1 className="mb-6 text-3xl font-semibold text-gray-900 dark:text-white">Conocimientos</h1>
-        <div className="space-y-8">
+      <div className="mx-auto max-w-4xl p-3 sm:p-4 md:p-6">
+        <h1 className="mb-4 sm:mb-6 text-xl sm:text-2xl md:text-3xl font-semibold text-gray-900 dark:text-white">Conocimientos</h1>
+        <div className="space-y-4 sm:space-y-6 md:space-y-8">
           {skillCategories.map((category) => (
-            <div key={category.id} className="rounded-lg border border-gray-200 bg-white p-5 shadow-sm transition-colors dark:border-gray-700 dark:bg-gray-800">
-              <h2 className="mb-4 text-xl font-bold text-gray-800 dark:text-gray-100">{category.category}</h2>
-              <div className="space-y-4">
+            <div key={category.id} className="rounded-lg border border-gray-200 bg-white p-3 sm:p-4 md:p-5 shadow-sm transition-colors dark:border-gray-700 dark:bg-gray-800">
+              <h2 className="mb-3 sm:mb-4 text-base sm:text-lg md:text-xl font-bold text-gray-800 dark:text-gray-100">{category.category}</h2>
+              <div className="space-y-2 sm:space-y-3 md:space-y-4">
                 {category.skills.map((skill, index) => (
                   <div key={index}>
-                    <div className="flex justify-between">
+                    <div className="flex justify-between text-xs sm:text-sm md:text-base">
                       <span className="font-medium text-gray-700 dark:text-gray-300">{skill.name}</span>
-                      <span className="text-sm text-gray-500 dark:text-gray-400">{skill.level}%</span>
+                      <span className="text-xs sm:text-sm text-gray-500 dark:text-gray-400">{skill.level}%</span>
                     </div>
-                    <div className="mt-1 h-2 w-full rounded-full bg-gray-200 dark:bg-gray-700">
+                    <div className="mt-1 h-1.5 sm:h-2 w-full rounded-full bg-gray-200 dark:bg-gray-700">
                       <div
-                        className="h-2 rounded-full bg-blue-500 dark:bg-blue-600"
+                        className="h-1.5 sm:h-2 rounded-full bg-blue-500 dark:bg-blue-600"
                         style={{ width: `${skill.level}%` }}
                       ></div>
                     </div>
