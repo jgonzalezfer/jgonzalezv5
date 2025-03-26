@@ -10,6 +10,7 @@ const Header = () => {
   const { darkMode } = useTheme();
   const isHomePage = location.pathname === "/";
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [hoveredItem, setHoveredItem] = useState<string | null>(null);
 
   const isActive = (path: string) => {
     return location.pathname === path;
@@ -32,20 +33,42 @@ const Header = () => {
     return isHomePage ? baseItems : fullItems;
   };
 
+  const getDisplayText = (itemName: string) => {
+    if (hoveredItem === itemName) {
+      switch (itemName) {
+        case "Imágenes":
+          return "Experiencia";
+        case "Vídeos":
+          return "Educación";
+        case "Shopping":
+          return "Conocimientos";
+        case "Noticias":
+          return "Proyectos";
+        default:
+          return itemName;
+      }
+    }
+    return itemName;
+  };
+
   const NavItems = ({ className = "" }) => (
     <div className={className}>
       {getNavItems().map((item) => (
         <Link
           key={item.name}
           to={item.path}
-          className={`block px-3 py-2 text-base font-medium ${
+          className={`block px-3 py-2 text-base font-medium transition-all duration-300 ease-in-out ${
             isActive(item.path)
               ? "text-blue-500 dark:text-blue-400"
               : "text-gray-600 hover:text-blue-500 dark:text-gray-300 dark:hover:text-blue-400"
           }`}
           onClick={() => setIsMobileMenuOpen(false)}
+          onMouseEnter={() => setHoveredItem(item.name)}
+          onMouseLeave={() => setHoveredItem(null)}
         >
-          {item.name}
+          <span className="inline-block transition-all duration-300 ease-in-out">
+            {getDisplayText(item.name)}
+          </span>
         </Link>
       ))}
     </div>
@@ -181,13 +204,17 @@ const Header = () => {
               <Link
                 key={item.name}
                 to={item.path}
-                className={`border-b-2 px-3 py-3 text-sm font-medium ${
+                className={`border-b-2 px-3 py-3 text-sm font-medium transition-all duration-300 ease-in-out ${
                   isActive(item.path)
                     ? "border-blue-500 text-blue-500 dark:border-blue-400 dark:text-blue-400"
                     : "border-transparent text-gray-600 hover:text-blue-500 dark:text-gray-300 dark:hover:text-blue-400"
                 }`}
+                onMouseEnter={() => setHoveredItem(item.name)}
+                onMouseLeave={() => setHoveredItem(null)}
               >
-                {item.name}
+                <span className="inline-block transition-all duration-300 ease-in-out">
+                  {getDisplayText(item.name)}
+                </span>
               </Link>
             ))}
           </div>
