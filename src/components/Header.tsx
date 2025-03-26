@@ -98,13 +98,11 @@ const Header = () => {
   );
 
   return (
-    <header className="flex flex-col transition-colors dark:bg-gray-900">
-      <div className="flex flex-col md:flex-row p-4 md:px-6 md:py-2">
-        {/* Contenedor principal */}
-        <div className="flex items-center justify-between w-full md:justify-start md:gap-4">
-          {/* Grupo izquierdo: Menú móvil + Logo */}
-          <div className="flex items-center md:w-36">
-            {/* Menú móvil */}
+    <header className="sticky top-0 z-50 bg-white dark:bg-gray-900 shadow-sm mt-4">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2">
+        <div className="flex items-center justify-between h-16">
+          {/* Logo y Menú Móvil */}
+          <div className="flex items-center">
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className="md:hidden rounded-full p-2 hover:bg-gray-100 dark:hover:bg-gray-700"
@@ -116,9 +114,8 @@ const Header = () => {
               )}
             </button>
 
-            {/* Logo/Nombre */}
             {!isHomePage && (
-              <Link to="/" className="text-2xl md:text-xl font-medium md:ml-0">
+              <Link to="/" className="ml-2 text-3xl font-medium">
                 <span className="text-blue-500 dark:text-blue-400">J</span>
                 <span className="text-red-500 dark:text-red-400">G</span>
                 <span className="text-blue-500 dark:text-blue-400">o</span>
@@ -135,44 +132,31 @@ const Header = () => {
 
           {/* Barra de búsqueda - Solo PC */}
           {!isHomePage && (
-            <div className="hidden md:flex flex-1 max-w-[584px] mx-auto items-center">
-              <div className="w-full relative items-center rounded-full border border-gray-300 bg-gray-100 px-4 py-2.5 hover:shadow-md focus-within:shadow-md transition-shadow dark:border-gray-600 dark:bg-gray-800">
-                <div className="flex items-center">
-                  <svg className="h-5 w-5 text-gray-500 dark:text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                  </svg>
-                  <input
-                    type="text"
-                    className="ml-3 flex-grow bg-transparent text-sm text-gray-800 outline-none placeholder:text-gray-500 dark:text-gray-200 dark:placeholder:text-gray-400"
-                    placeholder="Buscar información sobre J..."
-                  />
-                  <div className="flex items-center space-x-2 border-l border-gray-300 dark:border-gray-600 ml-3 pl-3">
-                    <button className="text-gray-500 dark:text-gray-300 hover:text-gray-700 dark:hover:text-gray-100">
-                      <svg className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M12 14c1.66 0 3-1.34 3-3V5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3z"></path>
-                        <path d="M17 11c0 2.76-2.24 5-5 5s-5-2.24-5-5H5c0 3.53 2.61 6.43 6 6.92V21h2v-3.08c3.39-.49 6-3.39 6-6.92h-2z"></path>
-                      </svg>
-                    </button>
+            <div className="hidden md:flex flex-1 max-w-2xl mx-8">
+              <div className="w-full relative">
+                <div className="relative rounded-full border border-gray-300 bg-gray-100 px-4 py-2 hover:shadow-md focus-within:shadow-md transition-shadow dark:border-gray-600 dark:bg-gray-800">
+                  <div className="flex items-center">
+                    <svg className="h-5 w-5 text-gray-500 dark:text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                    </svg>
+                    <input
+                      type="text"
+                      className="ml-3 flex-grow bg-transparent text-sm text-gray-800 outline-none placeholder:text-gray-500 dark:text-gray-200 dark:placeholder:text-gray-400"
+                      placeholder="Buscar información sobre J..."
+                    />
                   </div>
                 </div>
               </div>
             </div>
           )}
 
-          {/* Grupo derecho: Enlaces + Controles */}
-          <div className="flex items-center space-x-2 md:w-36 md:justify-end">
-            {/* Enlaces externos - Solo PC */}
+          {/* Controles de la derecha */}
+          <div className="flex items-center space-x-4">
             <ExternalLinks className="hidden md:flex" />
-
-            {/* Light/Dark Toggle */}
             <ThemeToggle />
-
-            {/* App Menu - Solo PC */}
             <button className="hidden md:block rounded-full p-2 hover:bg-gray-100 dark:hover:bg-gray-700">
               <BsGrid3X3Gap className="h-5 w-5 text-gray-600 dark:text-gray-400" />
             </button>
-
-            {/* User Avatar */}
             <img
               src="/avatar.jpg"
               alt="Avatar de joel"
@@ -181,51 +165,15 @@ const Header = () => {
           </div>
         </div>
 
-        {/* Barra de búsqueda - Solo móvil/tablet */}
+        {/* Navegación - Solo PC */}
         {!isHomePage && (
-          <div className="flex md:hidden w-full relative items-center rounded-full border border-gray-300 bg-gray-100 px-4 py-2 mt-4 dark:border-gray-600 dark:bg-gray-800">
-            <svg className="h-4 w-4 text-gray-500 dark:text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-            </svg>
-            <input
-              type="text"
-              className="ml-2 flex-grow bg-transparent text-sm text-gray-800 outline-none placeholder:text-gray-500 dark:text-gray-200 dark:placeholder:text-gray-400"
-              placeholder="Buscar información sobre J..."
-            />
-            <div className="flex space-x-1">
-              <button className="text-gray-500 dark:text-gray-300">
-                <svg className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M12 14c1.66 0 3-1.34 3-3V5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3z"></path>
-                  <path d="M17 11c0 2.76-2.24 5-5 5s-5-2.24-5-5H5c0 3.53 2.61 6.43 6 6.92V21h2v-3.08c3.39-.49 6-3.39 6-6.92h-2z"></path>
-                </svg>
-              </button>
-            </div>
-          </div>
-        )}
-      </div>
-
-      {/* Mobile Menu */}
-      {isMobileMenuOpen && (
-        <div className="md:hidden border-t border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900">
-          <div className="px-4 py-3 space-y-2">
-            <NavItems className="flex flex-col space-y-2" />
-            <div className="mt-4 pt-4 border-t border-gray-200 dark:border-gray-700">
-              <ExternalLinks className="flex-col space-y-3" />
-            </div>
-          </div>
-        </div>
-      )}
-
-      {/* Navegación inferior */}
-      {!isHomePage && (
-        <div className="border-b border-gray-200 dark:border-gray-700">
-          <div className="max-w-[584px] mx-auto">
-            <nav className="flex items-center justify-start overflow-x-auto">
+          <div className="hidden md:block   dark:border-gray-700 mt-4">
+            <nav className="flex space-x-8">
               {getNavItems().map((item) => (
                 <Link
                   key={item.name}
                   to={item.path}
-                  className={`flex-shrink-0 px-6 py-2 text-sm font-medium border-b-2 transition-all duration-300 ease-in-out ${
+                  className={`py-4 text-sm font-medium border-b-2 transition-all duration-300 ease-in-out ${
                     isActive(item.path)
                       ? "text-blue-500 border-blue-500 dark:text-blue-400 dark:border-blue-400"
                       : "text-gray-600 border-transparent hover:text-blue-500 hover:border-blue-500 dark:text-gray-300 dark:hover:text-blue-400"
@@ -233,12 +181,22 @@ const Header = () => {
                   onMouseEnter={() => setHoveredItem(item.name)}
                   onMouseLeave={() => setHoveredItem(null)}
                 >
-                  <span className="inline-block transition-all duration-300 ease-in-out whitespace-nowrap">
-                    {getDisplayText(item.name)}
-                  </span>
+                  {getDisplayText(item.name)}
                 </Link>
               ))}
             </nav>
+          </div>
+        )}
+      </div>
+
+      {/* Menú móvil */}
+      {isMobileMenuOpen && (
+        <div className="md:hidden border-t border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900">
+          <div className="px-4 py-3 space-y-2">
+            <NavItems className="flex flex-col space-y-2" />
+            <div className="mt-4 pt-4 border-t border-gray-200 dark:border-gray-700">
+              <ExternalLinks className="flex-col space-y-3" />
+            </div>
           </div>
         </div>
       )}
