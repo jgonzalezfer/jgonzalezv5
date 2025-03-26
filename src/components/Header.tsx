@@ -23,10 +23,10 @@ const Header = () => {
 
     const fullItems = [
       { name: "Todo", path: "/sobremiCvJoelPage" },
-      { name: "Experiencia", path: "/experiencia" },
-      { name: "Educación", path: "/estudios" },
-      { name: "Conocimientos", path: "/conocimientos" },
-      { name: "Proyectos", path: "/proyectos" },
+      { name: "Imágenes", path: "/experiencia" },
+      { name: "Vídeos", path: "/estudios" },
+      { name: "Shopping", path: "/conocimientos" },
+      { name: "Noticias", path: "/proyectos" },
     ];
 
     return isHomePage ? baseItems : fullItems;
