@@ -19,6 +19,7 @@ const HomePage = () => {
             <span className="text-red-500 dark:text-red-400">l</span>
             <span className="text-yellow-500 dark:text-yellow-300">e</span>
             <span className="text-blue-500 dark:text-blue-400">z</span>
+            <span className="text-red-500 dark:text-red-400">F</span>
           </h1>
         </div>
 
@@ -33,7 +34,7 @@ const HomePage = () => {
           </div>
 
           <div className="mt-4 sm:mt-6 flex flex-col sm:flex-row justify-center gap-2 sm:space-x-3">
-            <button 
+            <button
               onClick={() => navigate("/sobremiCvJoelPage")}
               className="rounded-md bg-gray-100 px-3 sm:px-5 py-2 text-sm text-gray-800 transition-colors hover:bg-gray-200 dark:bg-gray-700 dark:text-gray-200 dark:hover:bg-gray-600">
               Buscar con Google
