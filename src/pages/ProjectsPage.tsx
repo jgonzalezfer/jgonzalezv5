@@ -51,39 +51,41 @@ const ProjectsPage = () => {
 
   return (
     <Layout>
-      <div className="mx-auto max-w-4xl p-6">
-        <h1 className="mb-8 text-3xl font-semibold text-gray-900 dark:text-white">Proyectos</h1>
-        <div className="space-y-6">
+      <div className="mx-auto max-w-4xl p-3 sm:p-4 md:p-6">
+        <h1 className="mb-4 sm:mb-6 text-xl sm:text-2xl md:text-3xl font-semibold text-gray-900 dark:text-white">Proyectos</h1>
+        <div className="space-y-3 sm:space-y-4 md:space-y-6">
           {projects.map((project) => (
-            <div key={project.id} className="rounded-lg border border-gray-200 bg-white p-5 shadow-sm transition-colors hover:shadow-md dark:border-gray-700 dark:bg-gray-800">
-              <div className="flex items-start gap-4">
+            <div key={project.id} className="rounded-lg border border-gray-200 bg-white p-3 sm:p-4 md:p-5 shadow-sm transition-colors hover:shadow-md dark:border-gray-700 dark:bg-gray-800">
+              <div className="flex flex-col sm:flex-row sm:items-start gap-3 sm:gap-4">
                 <div className="mt-1 flex-shrink-0">
-                  {project.icon}
+                  <div className="h-6 w-6 sm:h-8 sm:w-8">
+                    {project.icon}
+                  </div>
                 </div>
                 <div className="flex-grow">
-                  <div className="flex items-center justify-between">
-                    <h2 className="text-xl font-semibold text-gray-800 dark:text-gray-200">{project.title}</h2>
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                    <h2 className="text-base sm:text-lg md:text-xl font-semibold text-gray-800 dark:text-gray-200">{project.title}</h2>
                     <button className="rounded-full p-1 text-gray-500 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700">
-                      <SlOptions className="h-5 w-5" />
+                      <SlOptions className="h-4 w-4 sm:h-5 sm:w-5" />
                     </button>
                   </div>
-                  <div className="mt-1 flex flex-wrap gap-1">
+                  <div className="mt-2 flex flex-wrap gap-1">
                     {project.technologies.map((tech, index) => (
-                      <span key={index} className="text-sm text-gray-600 dark:text-gray-400">
+                      <span key={index} className="text-xs sm:text-sm text-gray-600 dark:text-gray-400">
                         {tech}{index < project.technologies.length - 1 ? ", " : ""}
                       </span>
                     ))}
                   </div>
-                  <h3 className="mt-3 text-lg font-semibold text-blue-600 dark:text-blue-400">{project.name}</h3>
-                  <p className="mt-2 text-gray-700 dark:text-gray-300">{project.description}</p>
+                  <h3 className="mt-2 sm:mt-3 text-sm sm:text-base md:text-lg font-semibold text-blue-600 dark:text-blue-400">{project.name}</h3>
+                  <p className="mt-2 text-xs sm:text-sm md:text-base text-gray-700 dark:text-gray-300">{project.description}</p>
                 </div>
               </div>
             </div>
           ))}
         </div>
-        <div className="mt-16 flex flex-col items-center">
+        <div className="mt-8 sm:mt-12 md:mt-16 flex flex-col items-center">
           <div className="text-center">
-            <span className="text-7xl">
+            <span className="text-3xl sm:text-5xl md:text-7xl">
               <span className="text-blue-500">J</span>
               <span className="text-red-500">a</span>
               <span className="text-yellow-500">a</span>
@@ -98,9 +100,9 @@ const ProjectsPage = () => {
               <span className="text-blue-500">r</span>
             </span>
           </div>
-          <div className="mt-4 flex justify-center space-x-3">
+          <div className="mt-3 sm:mt-4 flex flex-wrap justify-center gap-1 sm:gap-2 md:gap-3">
             {[1, 2, 3, 4, 5, 6, 7, 8, 8, 10].map((num, index) => (
-              <a key={index} href="#" className={`text-sm ${index === 0 ? 'text-black dark:text-white' : 'text-blue-600 dark:text-blue-400'}`}>
+              <a key={index} href="#" className={`text-xs sm:text-sm ${index === 0 ? 'text-black dark:text-white' : 'text-blue-600 dark:text-blue-400'}`}>
                 {num}
               </a>
             ))}
