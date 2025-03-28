@@ -8,6 +8,7 @@ import SkillsPage from "./pages/SkillsPage";
 import ResumePage from "./pages/ResumePage";
 import WhoAmIPage from "./pages/WhoAmIPage";
 import SobremiCvJoelPage from "./pages/SobremiCvJoelPage";
+import NotFound from "./pages/NotFound";
 import { ThemeProvider } from "./context/ThemeContext";
 import ProjectSection from './components/ProjectSection';
 
@@ -25,9 +26,9 @@ function App() {
           <Route path="/curriculum" element={<ResumePage />} />
           <Route path="/quien-soy" element={<WhoAmIPage />} />
           <Route path="/sobremiCvJoelPage" element={<SobremiCvJoelPage />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </Router>
-
     </ThemeProvider>
   );
 }
