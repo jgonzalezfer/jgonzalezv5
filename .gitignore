@@ -22,3 +22,33 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Archivos específicos del proyecto
+resume-joel.pdf
+
+# Archivos del sistema operativo
+.DS_Store
+Thumbs.db
+
+# Archivos de editores y IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Archivos de dependencias
+venv/
+__pycache__/
+*.pyc
+
+# Archivos de compilación
+build/
+*.class
+*.o
+*.exe
+
+# Archivos de entorno
+.env
+.env.local
+.env.*.local
