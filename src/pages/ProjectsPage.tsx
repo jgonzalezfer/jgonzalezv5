@@ -1,34 +1,25 @@
 import Layout from "../components/Layout";
-import { FaCircle } from "react-icons/fa";
-import { RiListCheck3 } from "react-icons/ri";
-import { BsChatSquareDots } from "react-icons/bs";
-import { AiOutlineUser } from "react-icons/ai";
-import { SlOptions } from "react-icons/sl";
-import AboutSection from "../components/AboutSection";
-import { aboutData } from "../data/aboutData";
+import ProjectSection from "../components/ProjectSection";
+import { projectsData } from "../data/projectData";
+
 const ProjectsPage = () => {
-
-
   return (
     <Layout>  
       <div className="container mx-auto px-4 py-8">
-        <div className="flex flex-col lg:flex-row gap-6 max-w-8xl mx-auto relative">
-          {/* Panel izquierdo con AboutSection - Ahora más ancho */}
-          <div className="lg:w-2/7 lg:sticky lg:top-8 lg:self-start">
-            <div className="space-y-6 bg-white dark:bg-gray-800 rounded-xl shadow-sm p-4">
-              {aboutData.personalInfo.map((info, index) => (
-                <div key={index} className="border-b last:border-b-0 border-gray-100 dark:border-gray-700 pb-6">
-                  <AboutSection
-                    title={info.title}
-                    image={info.image}
-                    languages={aboutData.skills.languages}
-                    link={aboutData.experience.link}
-                    linkText={aboutData.experience.linkText}
-                    description={info.description}
-                  />
-                </div>
-              ))}
-            </div>
+        <div className="max-w-6xl mx-auto">
+
+          
+          <div className="grid grid-cols-1 gap-6">
+            {projectsData.map((project, index) => (
+              <ProjectSection
+                key={index}
+                title={project.title}
+                image={project.image}
+                description={project.description}
+                timestamp={project.timestamp}
+                source={project.source}
+              />
+            ))}
           </div>
         </div>
       </div>
