@@ -1,10 +1,11 @@
 ---
 date: '2018-04-01'
-title: 'Telemetry developer in the solar car '
+title: 'Telemetry developer in the solar car'
 company: 'University UBO'
 location: 'Santiago, RM'
 range: 'mar. 2018 - sept. 2019 · 1 año 7 meses'
 url: 'http://www.ubo.cl/'
+technologies: ['Python', 'C++', 'Arduino', 'SQL', 'JavaScript']
 ---
 
 Fui el responsable del diseño, desarrollo y mantenimiento de los sistemas de telemetría y comunicación del vehículo, permitiendo la medición y transmisión de datos clave como eficiencia del vehículo, carga de la batería, consumo de energía, velocidad y otras variables. Estos datos fueron enviados a una base de datos para su análisis y visualización en una plataforma web, facilitando el monitoreo en tiempo real del estado del coche.

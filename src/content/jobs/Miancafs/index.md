@@ -1,10 +1,11 @@
 ---
 date: '2020-12-21'
-title: 'Junior Web Developer Engineer.'
+title: 'Junior Web Developer Engineer'
 company: 'Miancafs'
 location: 'Santiago, RM'
 range: 'dic. 2020 - feb. 2023 · 2 años 3 meses'
 url: 'https://www.miancafs.com'
+technologies: ['WordPress', 'WooCommerce', 'React', 'PHP', 'CSS', 'JavaScript', 'MySQL', 'Figma']
 ---
 
 Fui el responsable del desarrollo y mantenimiento de sitios web de comercio electrónico optimizados para motores de búsqueda. Además, participé en la creación y gestión de una ERP creada con la  personalizada espesifica de la wempresa para la mejora de informacion, implementando mejoras, actualizaciones y proporcionando soporte técnico a los usuarios.

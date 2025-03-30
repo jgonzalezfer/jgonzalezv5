@@ -1,10 +1,11 @@
 ---
 date: '2020-11-21'
-title: 'Junior Web Developer.'
+title: 'Junior Web Developer'
 company: 'Free-lance'
 location: 'Santiago, RM'
-range: 'sept. 2020 - nov. 2020 '
+range: 'sept. 2020 - nov. 2020'
 url: '#'
+technologies: ['WordPress', 'WooCommerce', 'PHP', 'JavaScript', 'HTML', 'CSS']
 ---
 
 Responsable del desarrollo y mantenimiento de sitios web de comercio electrónico utilizando WordPress y WooCommerce. Mi labor incluyó la creación de temas personalizados, optimización de funcionalidades y la implementación de medidas de seguridad para proteger los datos de los clientes. Además, realicé actualizaciones y mantenimiento continuo, colaboré con el equipo de diseño y mantuve una comunicación activa con los clientes para garantizar que sus necesidades fueran cubiertas de manera efectiva.

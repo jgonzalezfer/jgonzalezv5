@@ -1,55 +1,52 @@
 import Layout from "../components/Layout";
-import { aboutData } from "../data/aboutData";
-import AboutSection from "../components/AboutSection";
 import NavigationBar from "../components/NavigationBar";
 import noImage from "../assets/img/imagen_no_disponible.jpg";
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import loadExperiences, { JobExperience } from "../utils/loadExperiences";
 
 const ExperiencePage = () => {
   const navigate = useNavigate();
-  const [selectedItem, setSelectedItem] = useState<null | any>(null);
+  const [selectedItem, setSelectedItem] = useState<null | JobExperience>(null);
+  const [experiences, setExperiences] = useState<JobExperience[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchExperiences = async () => {
+      try {
+        const loadedExperiences = await loadExperiences();
+        setExperiences(loadedExperiences);
+      } catch (error) {
+        console.error('Error loading experiences:', error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchExperiences();
+  }, []);
 
   const navigationItems = [
-    { img: noImage, text: "Data" },
-    { img: noImage, text: "Python" },
-    { img: noImage, text: "Websites" },
-    { img: noImage, text: "Librerías" },
-    { img: noImage, text: "Screen scraping" },
-    { img: noImage, text: "Extraer" },
-    { img: noImage, text: "Scraping tool" },
-    { img: noImage, text: "Html" },
+    { img: noImage, text: "Desarrollo Web" },
+    { img: noImage, text: "WordPress" },
+    { img: noImage, text: "E-commerce" },
+    { img: noImage, text: "Frontend" },
+    { img: noImage, text: "Backend" },
   ];
 
-  const experienceItems = [
-    { 
-      img: noImage, 
-      title: "Data", 
-      subtitle: "Data", 
-      path: "/experience/data",
-      description: "Análisis y procesamiento de datos utilizando diferentes herramientas y técnicas."
-    },
-    { 
-      img: noImage, 
-      title: "Python", 
-      subtitle: "Python", 
-      path: "/experience/python",
-      description: "Desarrollo de aplicaciones y scripts en Python para automatización y análisis de datos."
-    },
-    { img: noImage, title: "Websites", subtitle: "Websites", path: "/experience/websites" },
-    { img: noImage, title: "Librerías", subtitle: "Librerías", path: "/experience/libraries" },
-    { img: noImage, title: "Screen scraping", subtitle: "Screen scraping", path: "/experience/screen-scraping" },
-    { img: noImage, title: "Extraer", subtitle: "Extraer", path: "/experience/extract" },
-    { img: noImage, title: "Scraping tool", subtitle: "Scraping tool", path: "/experience/scraping-tool" },
-    { img: noImage, title: "Html", subtitle: "Html", path: "/experience/html" },
-    { img: noImage, title: "Html", subtitle: "Html", path: "/experience/html" },
-    { img: noImage, title: "Html", subtitle: "Html", path: "/experience/html" },
-
-  ];
-
-  const handleItemClick = (item: any) => {
+  const handleItemClick = (item: JobExperience) => {
     setSelectedItem(item);
   };
+
+  if (loading) {
+    return (
+      <Layout>
+        <div className="container mx-auto px-4 py-8 flex justify-center items-center">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-500"></div>
+        </div>
+      </Layout>
+    );
+  }
 
   return (
     <Layout>
@@ -60,27 +57,28 @@ const ExperiencePage = () => {
           <div className={`grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 transition-all duration-300 ease-in-out ${
             selectedItem ? 'md:w-2/3 hidden md:grid' : 'w-full'
           }`}>
-            {experienceItems.map((item, index) => (
+            {experiences.map((item, index) => (
               <div 
                 key={index} 
-                className={`bg-white group cursor-pointer transition-all duration-300 ${
+                className={`bg-white rounded-lg shadow-md group cursor-pointer transition-all duration-300 hover:shadow-lg ${
                   selectedItem?.title === item.title ? 'ring-2 ring-blue-500' : ''
                 }`}
                 onClick={() => handleItemClick(item)}
               >
                 <div className="aspect-square">
                   <img 
-                    src={item.img} 
+                    src={noImage} 
                     alt={item.title}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover rounded-t-lg"
                   />
                 </div>
-                <div className="p-2">
-                  <h3 className="relative text-xs font-light text-gray-600 group-hover:text-blue-600 transition-colors duration-200 pb-1">
+                <div className="p-3">
+                  <h3 className="relative text-sm font-medium text-gray-800 group-hover:text-blue-600 transition-colors duration-200 pb-1">
                     {item.title}
                     <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 group-hover:w-full transition-all duration-200"></span>
                   </h3>
-                  <p className="text-sm font-light font-medium text-black mt-0.5">{item.subtitle}</p>
+                  <p className="text-xs font-medium text-gray-600 mt-1">{item.company}</p>
+                  <p className="text-xs text-gray-500 mt-1">{item.range}</p>
                 </div>
               </div>
             ))}
@@ -90,7 +88,7 @@ const ExperiencePage = () => {
             <div className="fixed md:relative inset-0 md:inset-auto w-full md:w-1/3 bg-white shadow-lg md:rounded-lg overflow-hidden transition-all duration-300 ease-in-out z-50">
               <div className="relative">
                 <img 
-                  src={selectedItem.img} 
+                  src={noImage} 
                   alt={selectedItem.title} 
                   className="w-full h-48 md:h-48 object-cover"
                 />
@@ -104,13 +102,22 @@ const ExperiencePage = () => {
                 </button>
               </div>
               <div className="p-6">
-                <h2 className="text-2xl font-semibold">{selectedItem.title}</h2>
-                <p className="text-gray-600 mt-2">{selectedItem.subtitle}</p>
-                {selectedItem.description && (
-                  <div className="mt-6 text-gray-700">
-                    <p>{selectedItem.description}</p>
+                <h2 className="text-2xl font-semibold text-gray-800">{selectedItem.title}</h2>
+                <p className="text-gray-600 mt-2">{selectedItem.company}</p>
+                <p className="text-sm text-gray-500 mt-1">{selectedItem.location}</p>
+                <p className="text-sm text-gray-500">{selectedItem.range}</p>
+                {selectedItem.technologies && (
+                  <div className="mt-4 flex flex-wrap gap-2">
+                    {selectedItem.technologies.map((tech, index) => (
+                      <span key={index} className="px-2 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">
+                        {tech}
+                      </span>
+                    ))}
                   </div>
                 )}
+                <div className="mt-6 text-gray-700 prose prose-sm">
+                  <p>{selectedItem.description}</p>
+                </div>
               </div>
             </div>
           )}
