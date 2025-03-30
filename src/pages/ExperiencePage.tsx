@@ -85,38 +85,54 @@ const ExperiencePage = () => {
           </div>
 
           {selectedItem && (
-            <div className="fixed md:relative inset-0 md:inset-auto w-full md:w-1/3 bg-white shadow-lg md:rounded-lg overflow-hidden transition-all duration-300 ease-in-out z-50">
-              <div className="relative">
-                <img 
-                  src={noImage} 
-                  alt={selectedItem.title} 
-                  className="w-full h-48 md:h-48 object-cover"
-                />
-                <button 
-                  onClick={() => setSelectedItem(null)}
-                  className="absolute top-4 right-4 bg-white rounded-full p-2 shadow-lg text-gray-500 hover:text-gray-700"
-                >
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                  </svg>
-                </button>
+            <div className="fixed md:relative inset-0 md:inset-auto w-full md:w-1/3 bg-white shadow-lg md:rounded-lg overflow-y-auto max-h-screen md:max-h-[500px] transition-all duration-300 ease-in-out z-50">
+              <div className="sticky top-0 z-10 bg-white">
+                <div className="relative h-20 bg-gray-100">
+                  <img 
+                    src={noImage} 
+                    alt={selectedItem.title} 
+                    className="w-full h-full object-cover"
+                  />
+                  <button 
+                    onClick={() => setSelectedItem(null)}
+                    className="absolute top-2 right-2 bg-white rounded-full p-1.5 shadow-lg text-gray-500 hover:text-gray-700 transition-colors duration-200"
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                  </button>
+                </div>
+                <div className="px-3 py-2 bg-white border-b">
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <h2 className="text-base font-semibold text-gray-800">{selectedItem.title}</h2>
+                      <p className="text-sm text-gray-600">{selectedItem.company}</p>
+                    </div>
+                    <div className="text-right">
+                      <p className="text-xs text-gray-500">{selectedItem.location}</p>
+                      <p className="text-xs text-gray-500">{selectedItem.range}</p>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div className="p-6">
-                <h2 className="text-2xl font-semibold text-gray-800">{selectedItem.title}</h2>
-                <p className="text-gray-600 mt-2">{selectedItem.company}</p>
-                <p className="text-sm text-gray-500 mt-1">{selectedItem.location}</p>
-                <p className="text-sm text-gray-500">{selectedItem.range}</p>
+              <div className="px-3 py-2">
                 {selectedItem.technologies && (
-                  <div className="mt-4 flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-1.5 mb-2">
                     {selectedItem.technologies.map((tech, index) => (
-                      <span key={index} className="px-2 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">
+                      <span key={index} className="px-2 py-0.5 bg-blue-50 text-blue-700 rounded-full text-xs font-medium">
                         {tech}
                       </span>
                     ))}
                   </div>
                 )}
-                <div className="mt-6 text-gray-700 prose prose-sm">
-                  <p>{selectedItem.description}</p>
+                <div className="text-gray-700 text-sm space-y-2">
+                  {selectedItem.description.split('\n\n').map((paragraph, index) => (
+                    paragraph.trim() && (
+                      <p key={index} className="leading-relaxed">
+                        {paragraph.trim()}
+                      </p>
+                    )
+                  ))}
                 </div>
               </div>
             </div>
