@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import imagenNoDisponible from '../assets/img/imagen_no_disponible.jpg';
 
 interface EducationSectionProps {
@@ -29,7 +28,12 @@ const EducationSection = ({
 
     return (
         <div className="bg-white dark:bg-gray-800">
-            <Link to={link} className="block">
+            <a 
+                href={link} 
+                target="_blank" 
+                rel="noopener noreferrer nofollow" 
+                className="block cursor-pointer"
+            >
                 <div className="text-xs text-gray-500 dark:text-gray-400 px-2 pt-2">
                     www.youtube.com › watch
                 </div>
@@ -73,7 +77,7 @@ const EducationSection = ({
                         </svg>
                     </button>
                 </div>
-            </Link>
+            </a>
         </div>
     );
 };
