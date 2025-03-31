@@ -3,7 +3,7 @@ date: "2024-03-28"
 title: "Cybersecurity Awareness"
 institution: "Cisco Networking Academy"
 period: "2024"
-link: "https://www.netacad.com/courses/cybersecurity"
+links: "www.netacad.com/courses/cybersecurity"
 linkText: "Ver certificado"
 ---
 

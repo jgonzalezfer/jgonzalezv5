@@ -3,7 +3,7 @@ date: "2024-03-30"
 title: "E-commerce Development"
 institution: "Google"
 period: "2024"
-link: "https://www.coursera.org/learn/ecommerce-development"
+links: "www.coursera.org/learn/ecommerce-development"
 linkText: "Ver certificado"
 ---
 

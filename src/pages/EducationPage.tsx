@@ -33,7 +33,7 @@ const EducationPage = () => {
                     image={edu.image || imagenNoDisponible}
                     institution={edu.institution}
                     period={edu.period}
-                    link={edu.link}
+                    links={edu.links}
                     linkText={edu.linkText}
                     description={edu.description}
                   />

@@ -3,7 +3,7 @@ export interface Education {
   title: string;
   institution: string;
   period: string;
-  link: string;
+  links: string;
   linkText: string;
   description: string;
   image?: string;
@@ -36,7 +36,7 @@ const loadEducation = async (): Promise<Education[]> => {
         title: metadata.title,
         institution: metadata.institution,
         period: metadata.period,
-        link: metadata.link,
+        links: metadata.links,
         linkText: metadata.linkText,
         description: mainContent.trim(),
         image: metadata.image

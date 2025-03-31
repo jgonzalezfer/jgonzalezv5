@@ -3,7 +3,7 @@ date: "2024-03-31"
 title: "Frontend Essentials"
 institution: "Meta"
 period: "2024"
-link: "https://www.coursera.org/learn/front-end-developer"
+links: "www.coursera.org/learn/front-end-developer"
 linkText: "Ver certificado"
 ---
 

@@ -5,7 +5,7 @@ interface EducationSectionProps {
     image: string;
     institution: string;
     period: string;
-    link: string;
+    links: string;
     linkText: string;
     description: string;
     duration?: string;
@@ -17,7 +17,7 @@ const EducationSection = ({
     image, 
     institution, 
     period, 
-    link, 
+    links,
     description,
     duration = "0:00",
     views = "0"
@@ -26,16 +26,23 @@ const EducationSection = ({
         e.currentTarget.src = imagenNoDisponible;
     };
 
+    const getFullUrl = (url: string) => {
+        if (!url.startsWith('http://') && !url.startsWith('https://')) {
+            return `https://${url}`;
+        }
+        return url;
+    };
+
     return (
         <div className="bg-white dark:bg-gray-800">
             <a 
-                href={link} 
+                href={getFullUrl(links)} 
                 target="_blank" 
                 rel="noopener noreferrer nofollow" 
                 className="block cursor-pointer"
             >
                 <div className="text-xs text-gray-500 dark:text-gray-400 px-2 pt-2">
-                    www.youtube.com › watch
+                    {links}
                 </div>
                 <div className="flex gap-3 p-2 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
                     <div className="relative flex-shrink-0">

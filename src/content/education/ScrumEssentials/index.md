@@ -3,7 +3,7 @@ date: "2024-03-27"
 title: "Scrum Essentials"
 institution: "Scrum Alliance"
 period: "2024"
-link: "https://www.scrumalliance.org/certifications"
+links: "www.scrumalliance.org/certifications"
 linkText: "Ver certificado"
 ---
 

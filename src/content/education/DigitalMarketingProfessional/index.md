@@ -3,7 +3,7 @@ date: "2024-03-29"
 title: "Digital Marketing Professional"
 institution: "HubSpot Academy"
 period: "2024"
-link: "https://academy.hubspot.com/certification"
+links: "academy.hubspot.com/certification"
 linkText: "Ver certificado"
 ---
 
