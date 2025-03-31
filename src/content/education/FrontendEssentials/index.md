@@ -1,10 +1,12 @@
 ---
-date: "2024-03-31"
-title: "Frontend Essentials"
-institution: "Meta"
-period: "2024"
-links: "www.coursera.org/learn/front-end-developer"
+date: "2025-03-28"
+title: "Desarrollo Frontend Essentials"
+institution: "FCFM"
+period: "2025"
+links: "cajalosandes.virtual-labx.cl/certificates/87afd950424246c2bedb0746af140733"
 linkText: "Ver certificado"
+image: "/src/content/education/FrontendEssentials/DesarrolloFrontendEssentials.jpg
+duration: "10:00"
 ---
 
-Curso fundamental de desarrollo frontend que cubre HTML, CSS y JavaScript básico. Aprende las mejores prácticas y herramientas modernas para crear sitios web interactivos y responsivos.
+Certificación que valida los conocimientos esenciales en desarrollo frontend, cubriendo tecnologías clave como HTML, CSS, JavaScript y frameworks modernos, para la creación de interfaces de usuario interactivas y responsivas en aplicaciones web.

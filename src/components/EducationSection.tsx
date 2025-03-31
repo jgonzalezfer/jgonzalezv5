@@ -20,7 +20,7 @@ const EducationSection = ({
     links,
     description,
     duration = "0:00",
-    views = "0"
+    views,
 }: EducationSectionProps) => {
     const handleImageError = (e: React.SyntheticEvent<HTMLImageElement, Event>) => {
         e.currentTarget.src = imagenNoDisponible;
@@ -49,7 +49,7 @@ const EducationSection = ({
                         <img
                             src={image}
                             alt={title}
-                            className="w-40 h-24 object-cover rounded"
+                            className="w-40 h-32 object-contain rounded-lg bg-gray-50 dark:bg-gray-700 p-1"
                             onError={handleImageError}
                         />
                         <div className="absolute bottom-1 right-1 bg-black/75 px-1 text-xs text-white rounded">

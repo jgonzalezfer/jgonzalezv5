@@ -31,6 +31,12 @@ const loadEducation = async (): Promise<Education[]> => {
         return acc;
       }, {});
 
+      // Procesamos la imagen si existe
+      let imageUrl = undefined;
+      if (metadata.image) {
+        imageUrl = metadata.image;
+      }
+
       return {
         date: metadata.date,
         title: metadata.title,
@@ -39,7 +45,7 @@ const loadEducation = async (): Promise<Education[]> => {
         links: metadata.links,
         linkText: metadata.linkText,
         description: mainContent.trim(),
-        image: metadata.image
+        image: imageUrl
       };
     };
 

@@ -1,10 +1,12 @@
 ---
-date: "2024-03-30"
-title: "E-commerce Development"
-institution: "Google"
-period: "2024"
-links: "www.coursera.org/learn/ecommerce-development"
+date: "2025-03-28"
+title: "E-commerce"
+institution: "FCFM"
+period: "2025"
+links: "cajalosandes.virtual-labx.cl/certificates/eae236acb96e45d48f4a216b09b95818"
 linkText: "Ver certificado"
+image: "/src/content/education/E-commerce/E-commerce.jpg
+duration: "10:00"
 ---
 
-Curso especializado en desarrollo de comercio electrónico. Aprende a crear tiendas online, implementar sistemas de pago, y optimizar la experiencia de compra.
+Certificación que acredita conocimientos esenciales sobre Scrum, incluyendo roles, eventos y artefactos, aplicados en la gestión ágil de proyectos para mejorar la eficiencia y colaboración en equipos de trabajo.

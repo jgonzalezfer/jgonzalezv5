@@ -1,10 +1,12 @@
 ---
-date: "2024-03-27"
+date: "2025-03-28"
 title: "Scrum Essentials"
-institution: "Scrum Alliance"
-period: "2024"
-links: "www.scrumalliance.org/certifications"
+institution: "FCFM"
+period: "2025"
+links: "cajalosandes.virtual-labx.cl/certificates/3c5a0149a2ce448b8e1cf020e1c7d9bb"
 linkText: "Ver certificado"
+image: "/src/content/education/ScrumEssentials/ScrumEssentials.jpg
+duration: "10:00"
 ---
 
-Certificación en fundamentos de Scrum y metodologías ágiles. Aprende sobre roles, ceremonias, artefactos y principios del marco de trabajo Scrum.
+Certificación que acredita conocimientos esenciales sobre Scrum, incluyendo roles, eventos y artefactos, aplicados en la gestión ágil de proyectos para mejorar la eficiencia y colaboración en equipos de trabajo.
